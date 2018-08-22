@@ -11,12 +11,15 @@ log.txt
 *.sublime-workspace
 .vscode/
 npm-debug.log*
-
+package-lock.json
+package.json
+.json
 .idea/
 .ionic/
 .sourcemaps/
 .sass-cache/
 .tmp/
+.gitignore
 .versions/
 coverage/
 dist/
