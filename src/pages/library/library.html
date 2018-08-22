@@ -15,4 +15,20 @@
 
 <ion-content padding>
 
+  <ion-list>
+
+    <h3>Select your favorite quotes</h3>
+
+    <button ion-item *ngFor="let quoteGrp of quoteCollection"
+            [navPush]="quotesPage"
+            [navParams]="quoteGrp">
+
+      <ion-icon [name]="quoteGrp.icon" item-left></ion-icon>
+
+      <h2>{{quoteGrp.category | uppercase}}</h2>
+      <p>{{quoteGrp.quotes.length}} quotes</p>
+    </button>
+
+  </ion-list>
+
 </ion-content>

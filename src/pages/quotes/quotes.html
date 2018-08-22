@@ -7,12 +7,23 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>quotes</ion-title>
+    <ion-title>{{quoteGrp.category | uppercase}}</ion-title>
+
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <button ion-item *ngFor="let quote of quotes">
+    <ion-card>
+
+
+
+    </ion-card>
+
+
+  </button>
 
 </ion-content>
