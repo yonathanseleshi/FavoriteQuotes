@@ -45,9 +45,31 @@ export class FavoritesPage implements OnInit{
 
   onViewQuote(quote: Quote){
 
-    const modal = this.modalCtrl.create(QuotePage)
+    const modal = this.modalCtrl.create(QuotePage, quote)
 
     modal.present()
+
+    modal.onDidDismiss((unfav: boolean) => {
+
+      if (unfav){
+
+          console.log(unfav)
+        this.qouteService.removeQuoteFromFav(quote)
+
+
+        const position = this.quotes.findIndex((quoteOj: Quote) => {
+
+        return quoteOj.id == quote.id
+
+        })
+
+        this.quotes.splice(position, 1)
+      }
+
+
+
+    })
+
   }
 
 

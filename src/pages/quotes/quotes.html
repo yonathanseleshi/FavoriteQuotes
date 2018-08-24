@@ -33,7 +33,13 @@
       <ion-row>
 
         <ion-col text-right="">
-        <button ion-button clear small (click)="onAddToFav(quote)">Favorite</button>
+        <button ion-button clear small
+                (click)="onAddToFav(quote)" *ngIf="!isQuoteFav(quote)">Favorite</button>
+
+          <button ion-button clear small (click)="onUnfav(quote)"
+          *ngIf="isQuoteFav(quote)" color="danger">Unfavorite</button>
+
+
         </ion-col>
       </ion-row>
     </ion-card>

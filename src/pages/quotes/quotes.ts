@@ -66,4 +66,16 @@ export class QuotesPage implements OnInit{
     alert.present()
   }
 
+  onUnfav(quote: Quote){
+
+  this.quoteService.removeQuoteFromFav(quote)
+
+  }
+
+  isQuoteFav(quote: Quote){
+
+  return this.quoteService.isQuoteFav(quote)
+
+  }
+
 }

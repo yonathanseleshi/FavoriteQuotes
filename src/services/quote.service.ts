@@ -34,4 +34,16 @@ export class QuoteService {
     return this.favoriteQuotes.slice()
 
   }
+
+  isQuoteFav(quote: Quote){
+
+
+    return this.favoriteQuotes.find((quoteObj: Quote) => {
+
+      return quoteObj.id == quote.id
+
+    })
+  }
+
+
 }
