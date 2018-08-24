@@ -54,22 +54,34 @@ export class FavoritesPage implements OnInit{
       if (unfav){
 
           console.log(unfav)
-        this.qouteService.removeQuoteFromFav(quote)
 
-
-        const position = this.quotes.findIndex((quoteOj: Quote) => {
-
-        return quoteOj.id == quote.id
-
-        })
-
-        this.quotes.splice(position, 1)
+        this.onDeleteFav(quote)
       }
 
 
 
     })
 
+
+  }
+
+
+  onDeleteFav(quote: Quote){
+
+
+
+    this.qouteService.removeQuoteFromFav(quote)
+
+
+    const position = this.quotes.findIndex((quoteOj: Quote) => {
+
+      return quoteOj.id == quote.id
+
+    })
+
+    this.quotes.splice(position, 1)
+
+    console.log("This quote has been deleted: " + quote.text)
   }
 
 
