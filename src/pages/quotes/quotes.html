@@ -16,14 +16,29 @@
 
 <ion-content padding>
 
-  <button ion-item *ngFor="let quote of quotes">
-    <ion-card>
+
+    <ion-card *ngFor="let quote of quoteGrp.quotes; let i = index">
+
+      <ion-card-header>
 
 
+          #{{i + 1}}
 
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{quote.text}}</p>
+        <p>{{quote.person}}</p>
+      </ion-card-content>
+
+      <ion-row>
+
+        <ion-col text-right="">
+        <button ion-button clear small (click)="onAddToFav(quote)">Favorite</button>
+        </ion-col>
+      </ion-row>
     </ion-card>
 
 
-  </button>
+
 
 </ion-content>
